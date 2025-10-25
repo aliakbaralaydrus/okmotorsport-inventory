@@ -16,18 +16,18 @@ interface Item {
   status?: string;
 }
 
-interface Transaction {
-  id: number;
-  itemId: number;
-  itemName: string;
-  type: "withdraw" | "return";
-  quantity: number;
-  user: string;
-  date: string;
-  purpose: string;
-  returned?: boolean;
-  returnDate?: string;
-}
+//interface Transaction {
+//  id: number;
+//  itemId: number;
+//  itemName: string;
+//  type: "withdraw" | "return";
+//  quantity: number;
+//  user: string;
+//  date: string;
+//  purpose: string;
+//  returned?: boolean;
+//  returnDate?: string;
+// }
 
 const FSAEInventory: React.FC<{ scriptUrl: string }> = ({ scriptUrl }) => {
   const [inventory, setInventory] = useState<Item[]>([]);
@@ -55,7 +55,7 @@ const FSAEInventory: React.FC<{ scriptUrl: string }> = ({ scriptUrl }) => {
         const invData = await invRes.json();
         const txData = await txRes.json();
         setInventory(invData);
-        setTransactions(txData);
+        //setTransactions(txData);
       } catch (e) {
         console.error(e);
         alert("Error loading data from Google Sheets.");
