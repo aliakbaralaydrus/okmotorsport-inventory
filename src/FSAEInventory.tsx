@@ -31,7 +31,6 @@ interface Transaction {
 
 const FSAEInventory: React.FC<{ scriptUrl: string }> = ({ scriptUrl }) => {
   const [inventory, setInventory] = useState<Item[]>([]);
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
